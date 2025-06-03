@@ -9,6 +9,7 @@
 }
 /* 탑버튼 끝 */
 
+
 /* 메인 섹션 시작 */
 .main_section {
     background: url(../img/해피어트\ 메인.png);
@@ -17,16 +18,16 @@
     height: 100vh;
 }
 
-header > p {
+header>p {
     background: #be201f;
     text-align: center;
-    padding: 14px 0; 
+    padding: 14px 0;
     color: #fff;
     font-size: 14px;
 }
 
 .header_bottom,
-.header_bottom > ul {
+.header_bottom>ul {
     display: flex;
 }
 
@@ -50,47 +51,62 @@ header > p {
     justify-content: flex-end;
 }
 
-.header_bottom > ul {
+.header_bottom>ul {
     gap: 24px;
 }
 
-.header_menu > li {
+.header_menu>li {
     font-size: 20px;
     color: #be201f;
     font-weight: 600;
 }
 
-.header_menu > li::after {
+.header_menu>li::after {
     content: '';
     display: block;
     background-color: #be201f;
     width: 0;
     height: 2px;
     margin-top: 16px;
+    transition: 0.5s;
 }
 
-.header_menu > li:hover li::after {
+.header_menu>li:hover::after {
     width: 100%;
-    /* 아직 안함. */
 }
+
+/* 헤더 스크립트 스타일 시작*/
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.5s;
+}
+
+header.hide {
+    transform: translateY(100%);
+    opacity: 0;
+}
+/* 헤더 스크립트 스타일 끝*/
 
 .main_text {
     margin: 60px 80px;
 }
 
-.main_text > h2 {
+.main_text>h2 {
     font-size: 50px;
     color: #fff;
     line-height: 75px;
     font-weight: 600;
 }
 
-.main_text > p {
+.main_text>p {
     font-size: 20px;
     color: #fff;
     margin-top: 24px;
 }
 /* 메인 섹션 끝 */
+
 
 /* 쉐이크리스트 섹션 시작 */
 .shack_list_sectiom {
@@ -102,12 +118,12 @@ header > p {
     justify-content: space-between;
 }
 
-.shack_list > li > img {
+.shack_list>li>img {
     width: 558px;
     height: 683px;
 }
 
-.shack_list > li {
+.shack_list>li {
     color: #be201f;
 }
 
@@ -136,5 +152,205 @@ header > p {
     padding: 8px;
     margin-top: 16px;
 }
-
 /* 쉐이크리스트 섹션 끝 */
+
+
+/* 리서치 섹션 시작 */
+
+/* 회전하는 텍스트 애니메이션 시작 */
+.research_section {
+    overflow: hidden;
+}
+
+.text_ani_box {
+    width: max-content;
+    animation: roll 70s infinite linear;
+    margin-bottom: 100px;
+}
+
+.text_ani_box > p {
+    font-size: 170px;
+    color: #be201f;
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/* 회전하는 텍스트 애니메이션 끝 */
+
+.research_box {
+    margin: 0 80px;
+}
+
+.research_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.research_bottom {
+    margin-bottom: 34px;
+} 
+
+.research_list_width {
+    width: 560px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.research_list_width > h2 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #be201f;
+    margin-bottom: 32px;
+}
+
+.research_list_width > p {
+    color: #be201f;
+    line-height: 24px;
+    margin-bottom: 250px;
+}
+
+.more_btn {
+    color: #be201f;
+    text-decoration: none;
+    font-size: 28px;
+    border: 1px solid #be201f;
+    width: fit-content;
+    /* fit-content : 안의 내용물 만큼 공간을 차지하겠다. */
+    padding: 16px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.more_btn:hover {
+    color: #fff;
+    background-color: #be201f;
+}
+/* 리서치 섹션 끝 */
+
+
+/* 애니메이션존 섹션 시작 */
+.animation_zone {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 80px;
+    align-items: center;
+}
+
+.animation_text {
+    font-size: 120px;
+    color: #be201f;
+    line-height: 170px;
+}
+
+.animation_text > span {
+    border: 3px solid #be201f;
+    padding: 0 60px 18px;
+    border-radius: 100px;
+}
+
+.animation_img {
+    animation: img_rotate 15s infinite linear;
+}
+
+@keyframes img_rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* 애니메이션존 섹션 끝 */
+
+
+/* 다이어트 섹션 시작 */
+.diet_section {
+    background: url(../img/하단\ 이미지.png);
+    height: 740px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.diet_section > p {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 80px;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.diet_section > h2 {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.more_btn.white {
+    color: #fff;
+    background: none;
+    border: 1px solid #fff;
+}
+
+.more_btn.white:hover {
+    color: #be201f;
+    background: #fff;
+}
+/* 다이어트 섹션 끝 */
+
+
+/* 푸터 시작 */
+footer {
+    background-color: #be201f;
+    padding: 80px 100px;
+}
+
+.footer_contant {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    font-size: 20px;
+    line-height: 32px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.footer_contant > div > h3 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.info > p:nth-child(2) {
+    margin-bottom: 32px;
+}
+
+.guide > ul > li {
+    width: 250px;
+    padding: 12px 0;
+    border-bottom: 1px solid #fff;
+}
+
+.contact > div {
+    padding: 16px 0;
+}
+
+.plus_text {
+    font-size: 26px;
+    font-weight: 600;
+}
+/* 푸터 끝 */
